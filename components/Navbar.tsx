@@ -83,7 +83,7 @@ const Navbar = () => {
               duration: 0.5, // Smooth transition for both open and close
               ease: "easeInOut",
             }}
-            className="md:hidden fixed p-8 inset-y-0 right-0 h-[30rem] w-full bg-[#026147] text-[#fef3e9] rounded-t-2xl"
+            className="md:hidden fixed p-8 inset-y-0 right-0 h-full w-full bg-[#026147] text-[#fef3e9] rounded-t-2xl"
           >
             <div className="flex flex-col justify-start gap-6 items-center h-full space-y-4 p-4">
               <div className="hover:text-[#8B5A2B] hover:cursor-pointer">
