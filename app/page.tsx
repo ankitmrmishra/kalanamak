@@ -1,5 +1,7 @@
 import Hero from "@/components/Hero";
+import Products from "@/components/Products";
 import Story from "@/components/Story";
+import { Testimonials } from "@/components/Testimonial";
 
 export default function Home() {
   return (
@@ -7,6 +9,8 @@ export default function Home() {
       <Hero />
       {/* <MockupShowCase /> */}
       <Story />
+      <Testimonials />
+      <Products />
     </div>
   );
 }

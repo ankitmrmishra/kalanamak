@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
+
+import colors from "tailwindcss/colors";
 
 export default {
   darkMode: ["class"],
@@ -58,9 +61,30 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+
         "slow-spin": "spin 20s linear infinite", // Adjust duration here (10s for very slow)
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+// function addVariablesForColors({ addBase, theme }: any) {
+//   let allColors = flattenColorPalette(theme("colors"));
+//   let newVars = Object.fromEntries(
+//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+//   );
+
+//   addBase({
+//     ":root": newVars,
+//   });
+// }

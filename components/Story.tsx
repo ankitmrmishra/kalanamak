@@ -2,7 +2,7 @@ import { Bricolage_Grotesque } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 import Buddha from "../public/assets/rb_2147981190.png";
-import mandala from "@/public/assets/rb_81.png";
+
 const PoppinsFont = Bricolage_Grotesque({
   subsets: ["latin-ext"],
   weight: ["600"],
@@ -55,7 +55,7 @@ const Story = () => {
           <Image src={Buddha} alt="" width={500} height={500} />
         </div>
       </div>
-      <div className="absolute -left-96  -z-50 animate-slow-spin">
+      {/* <div className="absolute -left-96  -z-50 animate-slow-spin">
         <Image
           width={600}
           height={600}
@@ -72,7 +72,7 @@ const Story = () => {
           alt=""
           className="opacity-15 filter blur-sm "
         />
-      </div>
+      </div> */}
     </div>
   );
 };
