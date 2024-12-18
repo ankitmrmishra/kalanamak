@@ -27,17 +27,17 @@ enum Status {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  email        String?  @unique
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  email        String?   @unique
   password     String
   name         String
   mobileNumber BigInt
-
-  image   String?
-  order   order[]
-  Address Address?
+  addressId    String
+  image        String?
+  order        order[]
+  Address      Address[]
 }
 
 model Address {
