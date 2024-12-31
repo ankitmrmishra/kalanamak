@@ -23,7 +23,7 @@ export function Testimonials() {
         </span>
       </div>
       <InfiniteMovingCards
-        className={`${BrocolageFontLight.className} max-h-max`}
+        className={`${BrocolageFontLight.className} max-h-max py-10`}
         items={testimonials}
         direction="right"
         speed="slow"

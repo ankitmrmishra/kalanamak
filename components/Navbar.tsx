@@ -4,6 +4,7 @@ import { Bricolage_Grotesque, Mukta } from "next/font/google";
 import { Menu, Wheat, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "motion/react";
+import { useRouter } from "next/navigation";
 
 const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 const PoppinsFont = Bricolage_Grotesque({
@@ -13,6 +14,7 @@ const PoppinsFont = Bricolage_Grotesque({
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const handleOnClick = () => {
     console.log("Clicked menu icon");
@@ -46,10 +48,27 @@ const Navbar = () => {
           </div>
           <div className="hover:text-[#8B5A2B] hover:cursor-pointer">Blog</div>
         </div>
-        <div className="contactus">
-          <Button className="rounded-full bg-[#026147] text-xl py-7 px-10">
+        <div className="contactus flex gap-5 justify-between align-middle items-center">
+          <Button
+            variant={"link"}
+            className="rounded-full bg-transparent text-[#026147] text-xl py-7 px-10"
+          >
             Contact Us
           </Button>
+          <div className="flex gap-2">
+            <Button
+              onClick={() => router.push("/login")}
+              className=" bg-[#026147] text-xl py-4 px-5 hover:bg-[#8B5A2B]"
+            >
+              Login
+            </Button>
+            <Button
+              onClick={() => router.push("/signup")}
+              className=" bg-[#026147] text-xl py-4 px-5 hover:bg-[#8B5A2B]"
+            >
+              Signup
+            </Button>
+          </div>
         </div>
       </div>
 

@@ -100,7 +100,7 @@ export const ProductsCard: React.FC<ProductsCardInterface> = ({
               className={cn(
                 "rounded-full bg-[#026147] px-8 py-6 text-lg hover:bg-[#026147]/90 transition-all duration-300",
                 title === "Kalanamak Rice - 25kg Pack" &&
-                  "bg-white text-textcolur"
+                  "bg-white text-textcolur hover:bg-white/65"
               )}
             >
               Shop Now

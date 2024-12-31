@@ -1,11 +1,26 @@
+"use client";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Wheat } from "lucide-react";
 
 import { Mukta } from "next/font/google";
+import { usePathname } from "next/navigation";
 
 const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 
-export default function Footer() {
+const Footer = () => {
+  const pathname = usePathname();
+
+  // Define pages where the footer should be excluded
+  const noFooterRoutes = ["/signup", "/login"];
+
+  // Determine if the current path should hide the footer
+  const hideFooter = noFooterRoutes.includes(pathname);
+  return <div>{!hideFooter && <FooterComponent />}</div>;
+};
+
+export default Footer;
+
+export function FooterComponent() {
   return (
     <footer className="bg-white border-t">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

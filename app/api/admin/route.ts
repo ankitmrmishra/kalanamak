@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import db from "../../../lib/prisma";
 
-export async function GET(res: NextResponse) {
+export async function GET() {
   try {
     const orders = await db.order.findMany({
       orderBy: {
@@ -13,8 +13,8 @@ export async function GET(res: NextResponse) {
   } catch (error) {
     console.log(error);
     return NextResponse.json(
-      { error: "Failed to fetch orders" },
-      { status: 500 }
+      { error: "Failed to fetch orders" }
+      // { status: 500 }
     );
   }
 }
