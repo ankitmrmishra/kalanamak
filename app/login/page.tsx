@@ -12,8 +12,8 @@ const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 
 const page = () => {
   return (
-    <div className="md:mt-10 h-[90vh] flex w-full  bg-black md:py-10 justify-center align-middle items-center  ">
-      <div className="logincomponent bg-[#000000] w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-44 ">
+    <div className="md:mt-10  flex w-full  md:py-10 justify-center align-middle items-center  ">
+      <div className="logincomponent bg-[#000000] w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-10 ">
         <div className="logo flex flex-col ">
           <div
             className={`logo ${mukta.className} text-[#026147] flex justify-center items-center align-middle text-3xl gap-2 text-center`}

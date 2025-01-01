@@ -19,6 +19,11 @@ enum Weight {
   KG50
 }
 
+enum role {
+  Admin
+  User
+}
+
 enum Status {
   Pending
   Shipped
@@ -27,30 +32,38 @@ enum Status {
 }
 
 model User {
-  id           Int       @id @default(autoincrement())
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-  email        String?   @unique
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  email        String?  @unique
   password     String
-  name         String
-  mobileNumber BigInt
-  addressId    String
-  image        String?
-  order        order[]
-  Address      Address[]
+  Firstname    String
+  Lastname     String
+  mobileNumber String
+  addressId    String?
+
+  isVerified                Boolean
+  role                      role
+  forgotPasswordToken       String?
+  forgotPasswordTokenExpiry DateTime?
+  verifyToken               String?
+  verifyTokenExpiry         DateTime?
+
+  order   order[]
+  Address Address[]
 }
 
 model Address {
-  id          String  @id @default(uuid())
-  user_id     Int     @unique
-  User        User    @relation(fields: [user_id], references: [id])
-  city        String
-  State       String
-  Country     String
-  pincode     Int
-  AdressLin1  String
-  AdressLine2 String
-  order       order[]
+  id      String @id @default(uuid())
+  user_id Int    @unique
+  User    User   @relation(fields: [user_id], references: [id])
+  city    String
+  State   String
+  Country String
+  pincode Int
+  Address String
+
+  order order[]
 }
 
 model order {

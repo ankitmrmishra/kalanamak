@@ -12,7 +12,7 @@ const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 
 const page = () => {
   return (
-    <div className="md:mt-10 flex w-full  bg-black md:py-10 justify-center align-middle items-center md:items-start  ">
+    <div className="md:mt-10 px-2 flex w-full   md:py-10 justify-center align-middle items-center md:items-start  ">
       <div className="logincomponent bg-[#000000] w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg py-3 px-10  flex flex-col justify-between align-middle border border-[#026147] ">
         <div className="logo flex flex-col justify-center align-middle items-center ">
           <div
@@ -39,16 +39,6 @@ const page = () => {
                 className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
               />
             </div>
-            <div className="password">
-              <span className="text-white">Password</span>
-              <input
-                type="password"
-                name=""
-                id=""
-                placeholder="************"
-                className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
-              />
-            </div>
             <div className="name flex gap-3 md:flex-row flex-col">
               <div className="w-full">
                 <span className="text-white">First Name</span>
@@ -71,7 +61,28 @@ const page = () => {
                 />
               </div>
             </div>
-            <div className="">
+            <div className="password">
+              <span className="text-white">Password</span>
+              <input
+                type="password"
+                name=""
+                id=""
+                placeholder="************"
+                className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
+              />
+            </div>
+            <div className="password">
+              <span className="text-white">Confirm Password</span>
+              <input
+                type="password"
+                name=""
+                id=""
+                placeholder="************"
+                className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
+              />
+            </div>
+
+            {/* <div className="">
               <span className="text-white">Address</span>
               <input
                 type="text"
@@ -80,8 +91,8 @@ const page = () => {
                 placeholder="e.g. H.No. 232/A Vihar Colony"
                 className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
               />
-            </div>
-            <div className="name flex gap-3 md:flex-row flex-col w-full ">
+            </div> */}
+            {/* <div className="name flex gap-3 md:flex-row flex-col w-full ">
               <div className="w-full">
                 <span className="text-white">City</span>
                 <input
@@ -102,8 +113,8 @@ const page = () => {
                   className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
                 />
               </div>
-            </div>
-            <div className="name flex gap-3 md:flex-row flex-col">
+            </div> */}
+            {/* <div className="name flex gap-3 md:flex-row flex-col">
               <div className="">
                 <span className="text-white">Pin Code</span>
                 <input
@@ -124,7 +135,7 @@ const page = () => {
                   className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
                 />
               </div>
-            </div>
+            </div> */}
           </form>
         </div>
         <Button className=" bg-[#026147] w-full text-xl py-4 px-5 hover:bg-[#8B5A2B]">
