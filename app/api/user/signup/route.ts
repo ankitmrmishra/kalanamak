@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 import prisma from "@/lib/prisma";
+import crypto from "crypto";
+import { sendVerificationEmail } from "@/helper/sendEmails";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, password, Firstname, Lastname, mobileNumber } = body;
+    const { email, password, Firstname, Lastname } = body;
 
-    if (!email || !password || !Firstname || !Lastname || !mobileNumber) {
+    if (!email || !password || !Firstname || !Lastname) {
       return NextResponse.json({ error: "All fields are required" });
     }
 
@@ -21,6 +23,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    const verifyTokengen = crypto.randomBytes(32).toString("hex");
+    const verifyTokenExpiry = new Date(Date.now() + 1000 * 60 * 15);
     const hashedPassword = await bcryptjs.hash(password, 10);
 
     const Newuser = await prisma.user.create({
@@ -29,15 +34,16 @@ export async function POST(request: NextRequest) {
         password: hashedPassword,
         Firstname,
         Lastname,
-        mobileNumber,
         isVerified: false,
         role: "User",
         forgotPasswordToken: null,
         forgotPasswordTokenExpiry: null,
-        verifyToken: null,
-        verifyTokenExpiry: null,
+        verifyToken: verifyTokengen,
+        verifyTokenExpiry: verifyTokenExpiry,
       },
     });
+
+    await sendVerificationEmail(email, verifyTokengen);
     return NextResponse.json(
       { message: "User created successfully", Newuser },
       { status: 201 }

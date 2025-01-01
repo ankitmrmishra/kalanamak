@@ -39,7 +39,7 @@ model User {
   password     String
   Firstname    String
   Lastname     String
-  mobileNumber String
+  mobileNumber String?
   addressId    String?
 
   isVerified                Boolean
