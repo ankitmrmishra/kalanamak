@@ -17,7 +17,7 @@ interface loginform {
   password: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formState, setformState] = useState<loginform>({
     email: "",
     password: "",
