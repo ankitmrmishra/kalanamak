@@ -4,6 +4,7 @@ import { Mukta } from "next/font/google";
 import { Wheat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useEmailVerificationStore } from "@/store/verification-store";
 
 const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 
@@ -21,7 +22,7 @@ const Page = () => {
     Firstname: "",
     Lastname: "",
   });
-
+  const { setEmail, setTokenType } = useEmailVerificationStore();
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,8 +43,14 @@ const Page = () => {
       const result = await response.json();
 
       if (response.ok) {
+        setEmail(result.Newuser.email);
+
+        setTokenType(result.Newuser.verifyToken);
+
         toast.dismiss(loadingToast);
-        toast.success("Signed up successfully!");
+        toast.success("Signed up successfully!", {
+          description: "Please Verify Your Email",
+        });
       } else {
         toast.dismiss(loadingToast);
         toast.error("Error signing up", {

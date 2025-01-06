@@ -44,6 +44,7 @@ export async function POST(request: NextRequest) {
     });
 
     await sendVerificationEmail(email, verifyTokengen);
+
     return NextResponse.json(
       { message: "User created successfully", Newuser },
       { status: 201 }
