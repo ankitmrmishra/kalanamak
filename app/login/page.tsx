@@ -17,7 +17,7 @@ interface loginform {
   password: string;
 }
 
-const page = () => {
+export default function page() {
   const [formState, setformState] = useState<loginform>({
     email: "",
     password: "",
@@ -121,6 +121,4 @@ const page = () => {
       </div>
     </div>
   );
-};
-
-export default page;
+}
