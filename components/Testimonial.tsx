@@ -159,7 +159,7 @@ const Testimonials = () => {
                     <p
                       className={`${inter.className} text-[#026147] text-lg md:text-xl italic mb-6`}
                     >
-                      "{testimonial.quote}"
+                      &quot;{testimonial.quote}&quot;
                     </p>
                     <div className="flex items-center">
                       <div className="w-12 h-12 rounded-full bg-[#026147]/10 flex items-center justify-center mr-4">

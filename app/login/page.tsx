@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Mukta } from "next/font/google";
-import { SeparatorHorizontal, Wheat } from "lucide-react";
+import { Wheat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
