@@ -5,6 +5,8 @@ import { Wheat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useEmailVerificationStore } from "@/store/verification-store";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 
@@ -74,67 +76,67 @@ const Page = () => {
   };
 
   return (
-    <div className="md:mt-10 px-2 flex w-full md:py-10 justify-center align-middle items-center md:items-start">
-      <div className="logincomponent bg-[#000000] w-[25rem] md:min-w-[30rem] md:mt-1 rounded-lg py-3 px-10 flex flex-col justify-between align-middle border border-[#026147]">
+    <div className=" px-2 flex w-full md:py-10 justify-center align-middle items-center  py-6 min-h-screen">
+      <div className="logincomponent bg-[#026147]/25 w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-10 backdrop-blur-3xl shadow-2xl ">
         <div className="logo flex flex-col justify-center align-middle items-center">
           <div
-            className={`logo ${mukta.className} text-[#fef3e9] flex justify-center items-center align-middle text-3xl gap-2 text-center`}
+            className={`logo ${mukta.className} text-[#026147] flex justify-center items-center align-middle text-3xl gap-2 text-center`}
           >
             <span className="bg-[#026147] rounded-full text-[#fef3e9] p-2">
               <Wheat />
             </span>
             कालानमक
           </div>
-          <span className="text-2xl text-white py-2 font-semibold text-center md:w-96">
+          <span className="sm:text-2xl text-lg text-black py-2 font-semibold text-center md:w-96">
             Join KalaNamak to get the best Kalanamak rice at your doorstep.
           </span>
         </div>
         <div className="form">
           <form action="" method="post" className="flex flex-col py-4 gap-5">
             <div className="email">
-              <span className="text-white">Email</span>
+              <span className="text-black">Email</span>
               <input
                 onChange={handleChange}
                 required
                 type="email"
                 name="email"
                 placeholder="example@gmail.com"
-                className="w-full rounded-lg h-10 placeholder-white/60 text-white px-2 bg-[#0261482d] border border-[#026147]"
+                className="w-full rounded-lg h-10 placeholder-white/60 text-black px-2 bg-[#0261482d] border border-[#026147]"
               />
             </div>
             <div className="name flex gap-3 md:flex-row flex-col">
               <div className="w-full">
-                <span className="text-white">First Name</span>
+                <span className="text-black">First Name</span>
                 <input
                   onChange={handleChange}
                   required
                   type="text"
                   name="Firstname"
                   placeholder="Yash"
-                  className="w-full rounded-lg h-10 placeholder-white/60 text-white px-2 bg-[#0261482d] border border-[#026147]"
+                  className="w-full rounded-lg h-10 placeholder-white/60 text-black px-2 bg-[#0261482d] border border-[#026147]"
                 />
               </div>
               <div className="w-full">
-                <span className="text-white">Last Name</span>
+                <span className="text-black">Last Name</span>
                 <input
                   onChange={handleChange}
                   required
                   type="text"
                   name="Lastname"
                   placeholder="Tripathi"
-                  className="w-full rounded-lg h-10 placeholder-white/60 text-white px-2 bg-[#0261482d] border border-[#026147]"
+                  className="w-full rounded-lg h-10 placeholder-white/60 text-black px-2 bg-[#0261482d] border border-[#026147]"
                 />
               </div>
             </div>
             <div className="password">
-              <span className="text-white">Password</span>
+              <span className="text-black">Password</span>
               <input
                 onChange={handleChange}
                 required
                 type="password"
                 name="password"
                 placeholder="************"
-                className="w-full rounded-lg h-10 placeholder-white/60 text-white px-2 bg-[#0261482d] border border-[#026147]"
+                className="w-full rounded-lg h-10 placeholder-white/60 text-black px-2 bg-[#0261482d] border border-[#026147]"
               />
             </div>
           </form>
@@ -150,6 +152,15 @@ const Page = () => {
         >
           {loading ? "Signing Up..." : "SignUp"}
         </Button>
+        <Separator className="my-4 bg-black" />
+        <div className="text-sm">
+          <span>
+            Already a User?
+            <Link href={"/login"} className="px-1 underline text-[#8B5A2B]">
+              Login here
+            </Link>
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Mukta } from "next/font/google";
-import { Wheat } from "lucide-react";
+import { SeparatorHorizontal, Wheat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 const mukta = Mukta({ weight: ["600"], subsets: ["devanagari"] });
 // const PoppinsFont = Bricolage_Grotesque({
@@ -72,8 +74,8 @@ export default function Page() {
   };
 
   return (
-    <div className="md:mt-10  flex w-full  md:py-10 justify-center align-middle items-center  ">
-      <div className="logincomponent bg-[#000000] w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-10 ">
+    <div className=" flex w-full   justify-center align-middle  items-center h-full  min-h-screen bg-red-900">
+      <div className="logincomponent bg-[#026147]/25 w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-10 backdrop-blur-3xl shadow-2xl ">
         <div className="logo flex flex-col ">
           <div
             className={`logo ${mukta.className} text-[#026147] flex justify-center items-center align-middle text-3xl gap-2 text-center`}
@@ -83,14 +85,14 @@ export default function Page() {
             </span>
             कालानमक
           </div>
-          <span className="text-2xl text-white py-5 font-semibold text-center w-full ">
+          <span className="text-2xl text-black py-5 font-semibold text-center w-full ">
             Welcome Back <br /> Login to KalaNamak app
           </span>
         </div>
         <div className="form">
           <form action="" method="post" className=" flex flex-col  py-4 gap-5">
             <div className="">
-              <span className="text-white">Email</span>
+              <span className="text-black">Email</span>
               <input
                 onChange={handleChange}
                 required
@@ -98,11 +100,11 @@ export default function Page() {
                 name="email"
                 id=""
                 placeholder="example@gmail.com"
-                className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
+                className=" w-full rounded-lg h-10 placeholder-white/60 text-black px-2  bg-[#0261482d] border border-[#026147] "
               />
             </div>
             <div className="">
-              <span className="text-white">Password</span>
+              <span className="text-black">Password</span>
               <input
                 onChange={handleChange}
                 required
@@ -110,7 +112,7 @@ export default function Page() {
                 name="password"
                 id=""
                 placeholder="************"
-                className=" w-full rounded-lg h-10 placeholder-white/60 text-white px-2  bg-[#0261482d] border border-[#026147] "
+                className=" w-full rounded-lg h-10 placeholder-white/60 text-black px-2  bg-[#0261482d] border border-[#026147] "
               />
             </div>
           </form>
@@ -121,6 +123,15 @@ export default function Page() {
         >
           {loading ? "Logging in..." : "LogIn"}
         </Button>
+        <Separator className="my-4 bg-black" />
+        <div className="text-sm">
+          <span>
+            Or
+            <Link href={"/signup"} className="px-1 underline text-[#8B5A2B]">
+              Create a New Account
+            </Link>
+          </span>
+        </div>
       </div>
     </div>
   );

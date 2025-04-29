@@ -61,15 +61,15 @@ export const ProductsCard: React.FC<ProductsCardInterface> = ({
     <div className="">
       <Card
         className={cn(
-          "text-textcolur",
+          "text-textcolur relative overflow-hidden",
           title === "Kalanamak Rice - 25kg Pack" &&
             "bg-textcolur text-white border-2 border-orange-700"
         )}
       >
         <CardHeader>
           {title === "Kalanamak Rice - 25kg Pack" && (
-            <div className="bg-[#fef3e9] max-w-max px-2 rounded-xl text-textcolur">
-              Best Seller
+            <div className=" max-w-max px-2  text-white text-lg absolute top-0 right-0 bg-orange-700">
+              Most Ordered
             </div>
           )}
           <CardTitle className={`${PoppinsFont.className} text-3xl `}>

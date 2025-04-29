@@ -22,10 +22,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#fef3e9] z-50 fixed border-b-2">
+    <div className="bg-[#fef3e9] z-50 fixed border-b-2 top-0 ">
       {/* Desktop Navbar */}
       <div
-        className={`p-5 hidden md:flex justify-between items-center align-middle ${PoppinsFont.className} fixed border-b-2 w-full bg-[#fef3e9]  md:px-20`}
+        className={`p-5 hidden md:flex justify-between items-center align-middle ${PoppinsFont.className} fixed border-b-2 w-full bg-[#fef3e9]  md:px-20 backdrop-blur-lg`}
       >
         <div
           className={`logo ${mukta.className} text-[#026147] flex justify-center items-center align-middle text-3xl gap-2 text-center`}
