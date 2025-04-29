@@ -74,7 +74,7 @@ export default function Page() {
   };
 
   return (
-    <div className=" flex w-full   justify-center align-middle  items-center h-full  min-h-screen bg-red-900">
+    <div className=" flex w-full   justify-center align-middle  items-center h-full  min-h-screen ">
       <div className="logincomponent bg-[#026147]/25 w-[25rem]  md:min-w-[30rem] md:mt-1 rounded-lg  px-10  flex flex-col justify-between align-middle border border-[#026147] py-10 backdrop-blur-3xl shadow-2xl ">
         <div className="logo flex flex-col ">
           <div
