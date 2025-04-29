@@ -34,16 +34,13 @@ const Page = () => {
     const loadingToast = toast("Signing up...", { duration: Infinity });
 
     try {
-      const response = await fetch(
-        "http://kalanamak.vercel.app/api/user/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formstate),
-        }
-      );
+      const response = await fetch("/api/user/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formstate),
+      });
 
       const result = await response.json();
 
