@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const queryParams = req.nextUrl.searchParams;
     const token = queryParams.get("token");
@@ -34,11 +34,11 @@ export async function POST(req: NextRequest) {
             verifyTokenExpiry: null,
           },
         });
-        return NextResponse.json(
-          { message: "Email Verified successfully" },
-          { status: 200 }
-        );
-        // return NextResponse.redirect(new URL("/userSucessEmail", req.url));
+        // return NextResponse.json(
+        //   { message: "Email Verified successfully" },
+        //   { status: 200 }
+        // );
+        return NextResponse.redirect(new URL("/userSucessEmail", req.url));
       }
     }
   } catch (error) {
