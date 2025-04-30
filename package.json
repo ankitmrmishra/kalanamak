@@ -27,6 +27,7 @@
     "nodemailer": "^6.9.16",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "render": "^0.1.4",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",

@@ -34,8 +34,11 @@ export async function POST(req: NextRequest) {
             verifyTokenExpiry: null,
           },
         });
-
-        return NextResponse.redirect(new URL("/userSucessEmail", req.url));
+        return NextResponse.json(
+          { message: "Email Verified successfully" },
+          { status: 200 }
+        );
+        // return NextResponse.redirect(new URL("/userSucessEmail", req.url));
       }
     }
   } catch (error) {
