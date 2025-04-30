@@ -18,7 +18,7 @@ export async function sendVerificationEmail({
     const { data, error } = await resend.emails.send({
       from: "Kalanamak <noreply@kalanamak.vercel.app>",
       to: email,
-      subject: "Verify your email address",
+      subject: "Verify your email ",
       react: EmailTemplate({
         FirstName: firstName,
         email: email,
