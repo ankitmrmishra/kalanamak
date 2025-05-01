@@ -43,11 +43,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    await sendVerificationEmail({
-      firstName: Firstname,
-      email: email,
-      verifyTokengen: verifyTokengen,
-    });
+    await sendVerificationEmail(email, verifyTokengen);
 
     return NextResponse.json(
       { message: "User created successfully", Newuser },
